@@ -3,6 +3,12 @@ $secondary-color: #232323;
 $font-stack: 'Raleway', sans-serif;
 $margin-spacing: 20px;
 
+@mixin font-style($size: 1em, $weight: normal, $style: normal) {
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+}
+
 body {
     font-family: $font-stack;
     background: #a6a6a6;
@@ -24,12 +30,13 @@ body {
 
 .row{
     display: flex;
+
 }
 
 
 .col1, .col2{
     font-family: $font-stack; 
-    font-size: 15.3px; 
+    @include font-style(15.3px);
     max-width: 50em;
     margin-right: 4em;
     margin-left: 37em;
@@ -64,28 +71,18 @@ body {
     margin-left: 35em;
     position: relative;
     top: 5.5em;
-h1{
-    font-weight:900;
-    font-size: 55px;
-    margin-bottom: 0;
-    min-width: 170px;
-    margin-bottom: -15px;
-}
-#surname{
-    font-size: 55px;
-    font-weight: lighter;
-    margin: 0;
-    padding: 0;
-    margin-bottom: -5px;
-}
-p{
-    font-weight: lighter;
-    font-style: italic;
-    font-size: 15px;
-    margin: 0;
-    min-width: 200px;
-    letter-spacing: 4px;
-}
+    h1 {
+      @include font-style(55px, 900);
+      margin-bottom: -15px;
+      }
+      #surname {
+        @include font-style(55px, lighter);
+        margin-bottom: -5px;
+      }
+      p {
+        @include font-style(15px, lighter, italic);
+        letter-spacing: 4px;
+      }
 }
 
 
@@ -102,26 +99,23 @@ p{
     font-size: 15px;
 
 p{
-    font-style: italic;
-    font-weight: bold;
+    @include font-style(1em, bold, italic);
     margin: 0;
     min-width: 150px;
     margin-bottom: 12px;
     margin-top: 10px;
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-    font-style: italic;
-    margin-bottom: 12px;
-    margin-top: 10px;
+a {
+  text-decoration: none;
+  color: inherit;
+  @include font-style(1em, bold, italic);
+  margin-bottom: 12px;
+  margin-top: 10px;
 }
 
 address{
-    font-style: italic;
-    font-weight: bold;
+    @include font-style(1em, bold, italic);
     width: 100%;
     max-width: 230px;
     margin-bottom: 12px;
@@ -161,8 +155,7 @@ i{
     
     h1{
         padding-left: -1px;
-        font-weight: bold;
-        font-size: 23.6px;
+        @include font-style(23.6px, bold, normal);
         margin-top: -1px;
     }
 
@@ -182,18 +175,15 @@ i{
             padding-left: 2em;
         
         h5{
-            font-style: italic;
-            font-weight: bold;
-            font-size: medium;
+            @include font-style(medium, bold, italic);
             margin-bottom: 0px;
             margin-top: -6.5em;
         }
         h4{
-            font-size:larger;
-            font-weight: bold;
+            @include font-style(larger, bold, normal);
         }
         p {
-            font-size: 0.8em;
+            @include font-style(0.8em, normal, normal);
             min-width: 21em;
             max-width: 21em;
         }
@@ -207,13 +197,11 @@ i{
             margin: 1.5em 0;
             .address{
               color: $primary-color;
-              font-style: italic;
-              font-weight: bold;
+              @include font-style(1em, bold, italic);
           }
           h3{
               margin: 0;
-              font-weight: bold;
-              font-size: 1.5em;
+              @include font-style(1.5em, bold, normal);
           }
           h5{
               font-size: 1.2em;
@@ -236,8 +224,7 @@ i{
               position: relative; 
               padding-left: 1em; 
               margin-top: 1em;
-              font-weight: bold;
-              font-size: small;
+              @include font-style(small, bold, normal);
   
               &::before {
                   content: "";
@@ -364,7 +351,7 @@ i{
               background-color: $primary-color;
           }
         }
-    }
+      }
 
     .lang-progress {
       margin-left: auto;
@@ -458,4 +445,18 @@ body .rectangle {
   height: 11.7em;  
   top: 15.8em;
   background-color: $primary-color; 
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle-btn {
+  background-color: $primary-color;
+  color: $secondary-color; 
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  
 }
