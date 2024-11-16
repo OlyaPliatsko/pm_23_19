@@ -168,7 +168,9 @@ i{
     }
 
     .education{
-        margin: 2em 3em 0 3em;
+        //margin: 2em 3em auto 3em;
+        margin: auto;
+        margin-top: 2em;
         text-align: justify;
         .degree{
             margin: 2em 0 2em 0;
@@ -191,7 +193,9 @@ i{
     }
     
     .references{
-        margin: 2em 3em 0 3em;
+        //margin: 2em 3em 0 3em;
+        margin: auto;
+        margin-top: 2em;
         text-align: justify;
         .contacts{
             margin: 1.5em 0;
@@ -211,47 +215,104 @@ i{
         }
     }
 
-    .languages{
-        margin: 2em 3em 0.5em 3em;
+    // .languages{
+    //     margin: 2em 3em 0.5em 3em;
         
-        ul {
-            padding: 0;
-            margin: 1.5em 0 0 0;
+    //     ul {
+    //         padding: 0;
+    //         margin: 1.5em 0 0 0;
 
-            li {
-              display: flex;
-              list-style: none;
-              position: relative; 
-              padding-left: 1em; 
-              margin-top: 1em;
-              @include font-style(small, bold, normal);
+    //         li {
+    //           display: flex;
+    //           list-style: none;
+    //           position: relative; 
+    //           padding-left: 1em; 
+    //           margin-top: 1em;
+    //           @include font-style(small, bold, normal);
   
-              &::before {
-                  content: "";
-                  position: absolute;
-                  left: 0;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  width: 0.5em;  
-                  height: 0.5em;
-                  background-color: $primary-color;
-              }
-            }
-        }
-        .lang-progress {
-          margin-left: auto;
-          margin-top: 0.5em;
-          width: 50%;
-          background-color: #353535;
-          height: 0.3em;
-          overflow: hidden;
+    //           &::before {
+    //               content: "";
+    //               position: absolute;
+    //               left: 0;
+    //               top: 50%;
+    //               transform: translateY(-50%);
+    //               width: 0.5em;  
+    //               height: 0.5em;
+    //               background-color: $primary-color;
+    //           }
+    //         }
+    //     }
+    //     .lang-progress {
+    //       margin-left: auto;
+    //       margin-top: 0.5em;
+    //       width: 50%;
+    //       background-color: #353535;
+    //       height: 0.3em;
+    //       overflow: hidden;
   
-          .sd-progress-bar {
-            height: 100%;
+    //       .sd-progress-bar {
+    //         height: 100%;
+    //         background-color: $primary-color;
+    //       }
+    //     }
+    //   }
+
+    .languages {
+      margin: 2em 3em 0.5em 3em;
+    
+      ul {
+        padding: 0;
+        margin: 1.5em 0 0 0;
+    
+        li {
+          display: flex;
+          align-items: center;
+          list-style: none;
+          position: relative;
+          padding-left: 1em;
+          margin-top: 1em;
+          @include font-style(small, bold, normal);
+    
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0.5em;
+            height: 0.5em;
             background-color: $primary-color;
+            transition: background-color 0.3s ease-in-out;
+          }
+    
+          &:hover {
+            color: $primary-color; // Наприклад, змінюємо колір тексту при наведенні
+    
+            &::before {
+              background-color: white; // Зміна кольору квадрата
+            }
           }
         }
       }
+    
+      .lang-progress {
+        margin-left: auto;
+        margin-top: 0.5em;
+        width: 50%;
+        background-color: #353535;
+        height: 0.3em;
+        overflow: hidden;
+    
+        .sd-progress-bar {
+          width: 0;
+          height: 20px;
+          background-color: $primary-color;
+          transition: width 1s ease; /* Плавна анімація ширини */
+        }
+        
+      }
+    }
+    
 
     i{
         color: $secondary-color;
@@ -327,6 +388,7 @@ i{
         font-size: small;
     }
       
+
       ul {
         padding: 0;
         margin: 1.5em 0 0 0;
@@ -337,8 +399,7 @@ i{
           position: relative; 
           padding-left: 1em; 
           margin-top: 1em;
-          font-weight: bold;
-          font-size: 1em;
+          @include font-style(1em, bold, normal);
 
           &::before {
               content: "";
@@ -350,23 +411,48 @@ i{
               height: 0.5em;
               background-color: $primary-color;
           }
+
+          &:hover {
+            color: $primary-color; // Змінюємо колір тексту при наведенні
+    
+            &::before {
+              background-color: $secondary-color; // Зміна кольору квадрата
+            }
+          }
         }
       }
+
+    // .lang-progress {
+    //   margin-left: auto;
+    //   margin-top: 0.5em;
+    //   width: 40%;
+    //   background-color: #d9d9d9;
+    //   height: 0.3em;
+    //   overflow: hidden;
+
+    //   .sd-progress-bar {
+    //     height: 100%;
+    //     background-color: $primary-color;
+    //   }
+    // }
 
     .lang-progress {
       margin-left: auto;
       margin-top: 0.5em;
-      width: 40%;
+      width: 40%;  // Забезпечує правильну ширину для контейнера
       background-color: #d9d9d9;
       height: 0.3em;
       overflow: hidden;
-
+      border-radius: 0px; // Це додасть заокруглені кути до прогрес-бару
+    
       .sd-progress-bar {
         height: 100%;
-        background-color: $primary-color;
+        background-color: $primary-color;  // Переконайтесь, що $primary-color визначена у вашому SCSS файлі
+        width: 0;  // Початкове значення ширини прогрес-бару
+        transition: width 1s ease, background-color 1s ease;  // Плавна анімація
       }
     }
-  
+    
 
     i{
       font-size: 17px;
@@ -447,16 +533,62 @@ body .rectangle {
   background-color: $primary-color; 
 }
 
-.hidden {
+
+/* Для приховування текстових блоків */
+.hidden-box {
   display: none;
+  opacity: 0; /* Робимо блок прозорим */
+  transition: opacity 0.8s ease-in-out;
 }
 
-.toggle-btn {
+/* Для показу текстових блоків */
+.open-info-box, .open-ref-info-box, .job-description {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Для анімацій кнопок */
+.btn-ed-toggle, .toggle-btn, .btn-ref-toggle {
   background-color: $primary-color;
-  color: $secondary-color; 
+  color: $secondary-color;
   border: none;
   border-radius: 5px;
   font-size: 17px;
   font-weight: bold;
-  
+  transition: transform 0.5s ease-in-out;
+  margin: 1em;
+}
+
+/* Кнопки при натисканні */
+.btn-ed-toggle:hover, .btn-ref-toggle:hover, .toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Приховуємо кнопки коли їхні текстові блоки відкриті */
+.open-info-box, .open-ref-info-box {
+  display: block;
+}
+
+/* Анімація для кнопок під час перемикання */
+.open-info-box.active + .btn-ed-toggle, 
+.open-ref-info-box.active + .btn-ref-toggle {
+  transform: translateY(-10px);  /* Піднімаємо кнопку */
+}
+
+/* Загальна стилізація для всіх блоків, що відкриваються */
+.open-info-box,
+.open-ref-info-box,
+.job-description {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+/* Коли блоки активовані (відкриті) */
+.open-info-box:not(.hidden),
+.open-ref-info-box:not(.hidden),
+.job-description:not(.hidden) {
+  opacity: 1;
+  max-height: 500px; /* Задайте висоту, що підходить для вмісту */
 }
