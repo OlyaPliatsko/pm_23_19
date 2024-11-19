@@ -1,0 +1,30 @@
+{
+  "name": "BRAIN D. PATERSON",
+  "position": "Graphic & Web Designer",
+  "contact": {
+    "phone": "+1-718-310-5588",
+    "website": "www.yourwebsite.com",
+    "address": "769 Prudence Street, Lincoln Park, MI 48146"
+  },
+  "education": [
+    {
+      "years": "2011 - 2023",
+      "school": "Stanford University",
+      "degree": "MASTER DEGREE",
+      "description": "Lorem Ipsum has been the industry's standard dummy text."
+    },
+    {
+      "years": "2007 - 2010",
+      "school": "Chicago University",
+      "degree": "BACHELOR DEGREE",
+      "description": "Lorem Ipsum has been the industry's standard dummy text."
+    }
+  ],
+  "languages": [
+    { "language": "English", "proficiency": 80 },
+    { "language": "French", "proficiency": 60 },
+    { "language": "Spanish", "proficiency": 70 },
+    { "language": "German", "proficiency": 50 },
+    { "language": "Arabic", "proficiency": 75 }
+  ]
+}

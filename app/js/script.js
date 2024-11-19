@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const setColorBasedOnProgress = (bar, width) => {
     if (width < 50) {
       bar.style.backgroundColor = '#ffcb2e'; // Якщо менше 40%
-    } else if (width >= 50 && width < 75) {
+    } else if (width >= 50 && width < 70) {
       bar.style.backgroundColor = '#f1b427'; // Якщо між 40% і 70%
     } else {
       bar.style.backgroundColor = '#a73d08'; // Якщо більше 70%
