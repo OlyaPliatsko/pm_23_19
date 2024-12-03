@@ -61,4 +61,4 @@ gulp.task('watch', function () {
     gulp.watch('app/img/*.+(jpg|jpeg|png|gif)', gulp.series('images'));
 });
 
-gulp.task('default', gulp.series('html', 'scss', 'scripts', 'images', 'watch'));
+gulp.task('default', gulp.series('html', 'scss', 'scripts', 'images', 'watch'));    

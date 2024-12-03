@@ -1,13 +1,7 @@
 $primary-color: #ffcb2e;
 $secondary-color: #232323;
-$font-stack: 'Raleway', sans-serif;
+$font-stack: 'Arial', sans-serif;
 $margin-spacing: 20px;
-
-@mixin font-style($size: 1em, $weight: normal, $style: normal) {
-  font-size: $size;
-  font-weight: $weight;
-  font-style: $style;
-}
 
 body {
     font-family: $font-stack;
@@ -17,130 +11,89 @@ body {
 }
 
 .container {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     max-width: 80em;
-    margin: 3em auto;
+    margin: 0 auto;
     background-color: #fff;
-    box-shadow: 0 0 30px rgba(0.5, 0.5, 0.5, 0.5);
-    justify-content: space-between;
-
+    box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
 }
 
-.row{
-    display: flex;
-
-}
-
-
-.col1, .col2{
-    font-family: $font-stack; 
-    @include font-style(15.3px);
-    max-width: 50em;
-    margin-right: 4em;
-    margin-left: 37em;
-    flex: 1;
-}
-
-.col1{
-    padding-top: 4em;
-}
-
-.col2{
-    font-weight: bold;
-    font-style: italic;
-}
-
-
-.custom-divider {
-    display: flex;
-    border-top: 1.3px solid $secondary-color;
+h1{
     margin: 0;
-    width: 275px;
 }
 
-.col-info{
-    display: flex;
-    flex-direction: column;
-    flex: 1; 
-    font-family: $font-stack;
-    color: $secondary-color;             
-    padding: 0;        
-    box-sizing: border-box;
-    margin-left: 35em;
-    position: relative;
-    top: 5.5em;
-    h1 {
-      @include font-style(55px, 900);
-      margin-bottom: -15px;
-      }
-      #surname {
-        @include font-style(55px, lighter);
-        margin-bottom: -5px;
-      }
-      p {
-        @include font-style(15px, lighter, italic);
-        letter-spacing: 4px;
-      }
-}
-
-
-.col-contact-info{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    font-family: $font-stack;
-    padding-top: 6em; 
-    padding-bottom: 0;     
-    box-sizing: border-box;
-    padding-left: 8em;
-    margin-left: -2em;
-    font-size: 15px;
-
-p{
-    @include font-style(1em, bold, italic);
+hr{
     margin: 0;
-    min-width: 150px;
-    margin-bottom: 12px;
-    margin-top: 10px;
+    padding: 0;
+    height: 1.5px;
+    background-color: white;
+    border: none;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  @include font-style(1em, bold, italic);
-  margin-bottom: 12px;
-  margin-top: 10px;
-}
-
-address{
-    @include font-style(1em, bold, italic);
+.header{
+    overflow: visible;
+    padding-top: 3em;
+    margin: 0 0 2em 0;
     width: 100%;
-    max-width: 230px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-}
-
-i{
-    font-size: 15px;
-    display: flex;
-    position: relative;
-    top: -7px;
-    margin-bottom: 12px;
-    margin-top: 8px;
-}
+    .lorem{
+        height: 8.2em;
+        margin: 0 6em 0 25em;
+        p{
+            margin-top: 0;
+            text-align: justify;
+        }
+        #strong-p{
+            margin-top: 1.5em;
+            margin-bottom: 2.5em;
+            font-weight: bold;
+            font-style: italic;
+        }
+    }
+    .title-info{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .contact-info{
+        margin: 1.1em 6em 0 2em;
+        p{
+            font-weight: bold;
+        }
+    }
+    .title{
+        background-color: $primary-color;
+        padding-right: 4em;
+        height: auto;
+        #title-text{
+            margin: 1.5em 0 2em 25em;
+            h1{
+                font-size: 3.5em;
+                line-height: 0.9em;
+            }
+            #surname{
+                margin: 0;
+                font-weight: normal;
+            }
+            p{
+                color: #232323;
+                margin: 0;
+                font-size: 0.95em;
+                font-style: italic;
+                letter-spacing: 4.5px;
+            }
+        }
+    }
+    hr{
+        background-color: $secondary-color;
+    }
 }
 
 .sidebar{
-    display: flex;
-    z-index: 1;
-    flex-direction: column;
-    font-family: $font-stack;
-    margin: -23.5em 0 3em 5.5em;
+    margin: -21em 0 3em 3em;
     background-color: $secondary-color;
     color: white;
-    width: 25em;
+    width: 20em;
     height: auto;
     padding: 2em 0 2em 0;
     .profile-image{
@@ -152,443 +105,237 @@ i{
             border: 0.5em solid;
         }
     }
-    
     h1{
-        padding-left: -1px;
-        @include font-style(23.6px, bold, normal);
-        margin-top: -1px;
+        margin-left: -0.1em;
     }
-
-    .custom-divider {
-        display: flex;
-        border-top: 2px solid white;
-        margin: 0px;
-        width: 19em;
-        margin-top: -8.3px;
+    hr{
+        background-color: white;
     }
-
     .education{
-        //margin: 2em 3em auto 3em;
-        margin: auto;
-        margin-top: 2em;
+        margin: 2em 3em 0 3em;
         text-align: justify;
         .degree{
             margin: 2em 0 2em 0;
-            padding-left: 2em;
-        
-        h5{
-            @include font-style(medium, bold, italic);
-            margin-bottom: 0px;
-            margin-top: -6.5em;
+        }
+        span {
+             display: table-cell;
         }
         h4{
-            @include font-style(larger, bold, normal);
+            margin: 0;
         }
         p {
-            @include font-style(0.8em, normal, normal);
-            min-width: 21em;
-            max-width: 21em;
+            font-size: 0.75em;
         }
-      }
     }
-    
     .references{
-        //margin: 2em 3em 0 3em;
-        margin: auto;
-        margin-top: 2em;
+        margin: 2em 3em 0 3em;
         text-align: justify;
         .contacts{
-            margin: 1.5em 0;
-            .address{
-              color: $primary-color;
-              @include font-style(1em, bold, italic);
-          }
-          h3{
-              margin: 0;
-              @include font-style(1.5em, bold, normal);
-          }
-          h5{
-              font-size: 1.2em;
-              margin: 0.35em 0 0 0;
-              font-weight: normal;
-          }
+            margin: 2em 0;
+        }
+        .address{
+            color: $primary-color;
+            font-style: italic;
+            font-weight: bold;
+        }
+        h3{
+            margin: 0;
+        }
+        h5{
+            margin: 0.35em 0 0 0;
+            font-weight: normal;
         }
     }
+    .languages{
+        margin: 2em 3em 0.5em 3em;
+        ul {
+            padding: 0;
+            margin: 1.5em 0 0 0;
 
-    // .languages{
-    //     margin: 2em 3em 0.5em 3em;
-        
-    //     ul {
-    //         padding: 0;
-    //         margin: 1.5em 0 0 0;
-
-    //         li {
-    //           display: flex;
-    //           list-style: none;
-    //           position: relative; 
-    //           padding-left: 1em; 
-    //           margin-top: 1em;
-    //           @include font-style(small, bold, normal);
-  
-    //           &::before {
-    //               content: "";
-    //               position: absolute;
-    //               left: 0;
-    //               top: 50%;
-    //               transform: translateY(-50%);
-    //               width: 0.5em;  
-    //               height: 0.5em;
-    //               background-color: $primary-color;
-    //           }
-    //         }
-    //     }
-    //     .lang-progress {
-    //       margin-left: auto;
-    //       margin-top: 0.5em;
-    //       width: 50%;
-    //       background-color: #353535;
-    //       height: 0.3em;
-    //       overflow: hidden;
-  
-    //       .sd-progress-bar {
-    //         height: 100%;
-    //         background-color: $primary-color;
-    //       }
-    //     }
-    //   }
-
-    .languages {
-      margin: 2em 3em 0.5em 3em;
-    
-      ul {
-        padding: 0;
-        margin: 1.5em 0 0 0;
-    
-        li {
-          display: flex;
-          align-items: center;
-          list-style: none;
-          position: relative;
-          padding-left: 1em;
-          margin-top: 1em;
-          @include font-style(small, bold, normal);
-    
-          &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0.5em;
-            height: 0.5em;
-            background-color: $primary-color;
-            transition: background-color 0.3s ease-in-out;
-          }
-    
-          &:hover {
-            color: $primary-color; // Наприклад, змінюємо колір тексту при наведенні
-    
-            &::before {
-              background-color: white; // Зміна кольору квадрата
+            li {
+                margin-top: 1em;
+                list-style: none;
+                font-size: 0.6em;
+                font-weight: bold;
             }
-          }
-        }
-      }
-    
-      .lang-progress {
-        margin-left: auto;
-        margin-top: 0.5em;
-        width: 50%;
-        background-color: #353535;
-        height: 0.3em;
-        overflow: hidden;
-    
-        .sd-progress-bar {
-          width: 0;
-          height: 20px;
-          background-color: $primary-color;
-          transition: width 1s ease; /* Плавна анімація ширини */
-        }
-        
-      }
-    }
-    
 
-    i{
-        color: $secondary-color;
-        display: flex;
-        position: relative;
-        margin-bottom: 12px;
-        margin-top: 8px;
-        top: -2.5px;
-        font-size: 18px;
+            li:before {
+                color: $primary-color;
+                content: "·";
+                font-size: 4em;
+                vertical-align: middle;
+                line-height: 0.4em;
+            }
+        }
+        .lang-progress{
+            float: right;
+        }
+        .sd-progress-bar{
+            float: right;
+            margin: 0.45em 0 0 0;
+            width: 47%;
+            background-color: #3d3d3d;
+        }
     }
 }
-
-
 .main-info{
-  font-family: $font-stack;
-  max-width: 50%;
-  margin: 2em 6em 3em 2.5em;
-
-  .custom-divider{
-    width: 100%;
-    border-top: 2.5px solid $secondary-color;
-    margin-top: 0;
-  }
-    
-  h1{
-    font-weight: bold;
-    font-size: 23.6px;
-    margin: 0;
-    margin-top: 5px;
-  }
-  h5{
-      margin: 0 0 0.25em 0;
-      font-weight: bold;
-  }
-  h3{
-      margin: 0;
-      font-size: medium;
-      font-weight: bold;
-      font-style: italic;
-  }
-  h6{
-    font-size: 2vw;
-  }
-  .city{
-      font-style: italic;
-      font-size: smaller;
-      font-weight: normal;
-      margin: 0;
-  }
-  .job-description{
-      margin: 0;
-      font-size: 0.8em;
-      line-height: 1.7em;
-      min-width: 45em;
-      max-width: 45em;
-  }
-  .job{
-       margin: -6.5em 0 0 2.8em;
-       text-align: justify;
-       span {
-           display: table-cell;
-       }
-  }
-  .knowledge{
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2em;
-      gap: 2em;
-
-      .skills-hobbies {
-        flex: 1;
+    width: 59.5%;
+    max-width: 47.45em;
+    margin: 1em 0 3em 3em;
+    hr{
+        background-color: $secondary-color;
+    }
+    h1{
+        margin-left: -0.1em;
+    }
+    h2{
+        margin: 0.15em 0 0.25em 0;
+    }
+    h3{
         margin: 0;
-        font-size: small;
+        font-style: italic
     }
-      
+    p{
+        margin: 0;
+    }
+    .city{
+        font-style: italic;
+    }
+    .job-description{
+        margin: 0;
+        font-weight: normal;
+        line-height: 1.45em;
+    }
+    .job{
+         margin: 2em 0 0 0;
+         text-align: justify;
+         span {
+             display: table-cell;
+         }
+    }
+    .knowledge{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2em;
+        ul {
+            padding: 0;
+            margin: 1.5em 0 0 0;
 
-      ul {
-        padding: 0;
-        margin: 1.5em 0 0 0;
-
-        li {
-          display: flex;
-          list-style: none;
-          position: relative; 
-          padding-left: 1em; 
-          margin-top: 1em;
-          @include font-style(1em, bold, normal);
-
-          &::before {
-              content: "";
-              position: absolute;
-              left: 0;
-              top: 50%;
-              transform: translateY(-50%);
-              width: 0.5em;  
-              height: 0.5em;
-              background-color: $primary-color;
-          }
-
-          &:hover {
-            color: $primary-color; // Змінюємо колір тексту при наведенні
-    
-            &::before {
-              background-color: $secondary-color; // Зміна кольору квадрата
+            li {
+                margin-top: 1em;
+                list-style: none;
+                font-size: 0.8em;
+                font-weight: bold;
             }
-          }
+
+            li:before {
+                color: $primary-color;
+                content: "·";
+                font-size: 4em;
+                vertical-align: middle;
+                line-height: 0.4em;
+            }
         }
-      }
-
-    // .lang-progress {
-    //   margin-left: auto;
-    //   margin-top: 0.5em;
-    //   width: 40%;
-    //   background-color: #d9d9d9;
-    //   height: 0.3em;
-    //   overflow: hidden;
-
-    //   .sd-progress-bar {
-    //     height: 100%;
-    //     background-color: $primary-color;
-    //   }
-    // }
-
-    .lang-progress {
-      margin-left: auto;
-      margin-top: 0.5em;
-      width: 40%;  // Забезпечує правильну ширину для контейнера
-      background-color: #d9d9d9;
-      height: 0.3em;
-      overflow: hidden;
-      border-radius: 0px; // Це додасть заокруглені кути до прогрес-бару
-    
-      .sd-progress-bar {
-        height: 100%;
-        background-color: $primary-color;  // Переконайтесь, що $primary-color визначена у вашому SCSS файлі
-        width: 0;  // Початкове значення ширини прогрес-бару
-        transition: width 1s ease, background-color 1s ease;  // Плавна анімація
-      }
+        .skills-hobbies{
+            width: 40%;
+        }
+        .mn-progress-bar{
+            float: right;
+            margin: 0.45em 0 0 0;
+            width: 47%;
+            background-color: #e6e6e6;
+        }
     }
-    
-
-    i{
-      font-size: 17px;
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .year{
-    margin-top: 2em;
-   margin-left: 0.2px;
-   height: 6.4em;
-   white-space: nowrap;
-  }
 }
-
-
-.year {
+.progress{
+    height: 100%;
+    width: 0;
+    padding: 0.21em 0 0.21em 0;
     background-color: $primary-color;
-    color: $secondary-color;
-    width: 1.2em; 
-    height: auto;
-    font-weight: bold;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-left: -2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span {
-        writing-mode: vertical-rl; // Вертикальна орієнтація тексту
-        transform: rotate(180deg); // Поворот тексту для правильного вигляду
-        font-size: 0.7em;
-        line-height: 1em;
-    }
+    transition: width 1s ease-in-out;
 }
-
+.years-vertical{
+    border: none;
+    font-weight: bold;
+    background-color: $primary-color;
+    color: black;
+    margin: 0 2em 0 0;
+    padding: 1em 0.4em 1em 0.1em;
+    font-size: 0.75em;
+    letter-spacing: 0.3px;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    float: left;
+}
+.years-horizontal{
+    border: none;
+    width: 10em;
+    height: 1.7em;
+    font-weight: bold;
+    background-color: $primary-color;
+    color: black;
+    margin: auto 2em auto 0;
+    padding: 0.4em 1em 0.1em 1em;
+    font-size: 0.75em;
+    letter-spacing: 0.5px;
+}
 .mini-icon-box{
     display: flex;
-    align-items: baseline;
     .mini-icon-contacts{
         display: flex;
         justify-content: center;
         background-color: $primary-color;
-        padding: 0.3em;
-        height: 1.6em;
-        width: 1.6em;
+        padding: 0.25em;
+        height: 1.2em;
+        width: 1.2em;
         margin: auto 1em auto 0;
     }
     .mini-icon-heading{
         display: flex;
         justify-content: center;
         background-color: $primary-color;
-        padding: 0em;
-        height: 1.84em;
-        width: 1.84em;
-        margin: 0 1em 0 0;
+        padding: 0.35em;
+        height: 1.2em;
+        width: 1.2em;
+        margin: auto 1em auto 0;
     }
     .icon{
-      color: $secondary-color;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: -10px;
-      margin-top: 8px;
-      font-size: 18px;
-      height: 100%;
+        height: 100%;
     }
 }
 
-body .rectangle {
-  position: absolute;
-  z-index: 0;
-  width: 66%;  
-  height: 11.7em;  
-  top: 15.8em;
-  background-color: $primary-color; 
+.hidden-box{
+    position: absolute;
+    left: -999em;
 }
-
-
-/* Для приховування текстових блоків */
-.hidden-box {
-  display: none;
-  opacity: 0; /* Робимо блок прозорим */
-  transition: opacity 0.8s ease-in-out;
+.non-open-info{
+    display: flex;
 }
-
-/* Для показу текстових блоків */
-.open-info-box, .open-ref-info-box, .job-description {
-  opacity: 1;
-  transition: opacity 0.8s ease-in-out;
+.opened-box{
+    animation: scale-in-center 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    transition: 0.7s;
 }
-
-/* Для анімацій кнопок */
-.btn-ed-toggle, .toggle-btn, .btn-ref-toggle {
-  background-color: $primary-color;
-  color: $secondary-color;
-  border: none;
-  border-radius: 5px;
-  font-size: 17px;
-  font-weight: bold;
-  transition: transform 0.5s ease-in-out;
-  margin: 1em;
+.closed-box{
+    animation: scale-out-center 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    transition: 0.7s;
 }
-
-/* Кнопки при натисканні */
-.btn-ed-toggle:hover, .btn-ref-toggle:hover, .toggle-btn:hover {
-  transform: scale(1.1);
+@keyframes scale-out-center {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
 }
-
-/* Приховуємо кнопки коли їхні текстові блоки відкриті */
-.open-info-box, .open-ref-info-box {
-  display: block;
-}
-
-/* Анімація для кнопок під час перемикання */
-.open-info-box.active + .btn-ed-toggle, 
-.open-ref-info-box.active + .btn-ref-toggle {
-  transform: translateY(-10px);  /* Піднімаємо кнопку */
-}
-
-/* Загальна стилізація для всіх блоків, що відкриваються */
-.open-info-box,
-.open-ref-info-box,
-.job-description {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.5s ease, max-height 0.5s ease;
-}
-
-/* Коли блоки активовані (відкриті) */
-.open-info-box:not(.hidden),
-.open-ref-info-box:not(.hidden),
-.job-description:not(.hidden) {
-  opacity: 1;
-  max-height: 500px; /* Задайте висоту, що підходить для вмісту */
+@keyframes scale-in-center {
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
 }
